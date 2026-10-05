@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import ForestDash from './ForestDash.jsx'
 import MemoryMatch from './MemoryMatch.jsx'
 import TicTacToe from './TicTacToe.jsx'
 import ExtraGames from './ExtraGames.jsx'
 import './Arcade.css'
+
+const CanopyQuest = lazy(() => import('./CanopyQuest.jsx'))
 
 const games = [
   {
@@ -96,6 +98,15 @@ const games = [
     mark: 'LO',
     tone: 'moss',
   },
+  {
+    id: 'canopy',
+    number: '11',
+    title: 'Canopy Quest',
+    category: 'FOUR-STAGE PLATFORMER',
+    description: 'Run, leap, and swing through four original jungle stages.',
+    mark: 'CQ',
+    tone: 'coral',
+  },
 ]
 
 export default function Arcade() {
@@ -104,6 +115,13 @@ export default function Arcade() {
   if (selectedGame === 'forest') return <ForestDash onExit={() => setSelectedGame(null)} />
   if (selectedGame === 'memory') return <MemoryMatch onExit={() => setSelectedGame(null)} />
   if (selectedGame === 'tic-tac-toe') return <TicTacToe onExit={() => setSelectedGame(null)} />
+  if (selectedGame === 'canopy') {
+    return (
+      <Suspense fallback={<main className="game-page"><p className="intro-copy">Preparing the canopy trail…</p></main>}>
+        <CanopyQuest onExit={() => setSelectedGame(null)} />
+      </Suspense>
+    )
+  }
   if (selectedGame) return <ExtraGames gameId={selectedGame} onExit={() => setSelectedGame(null)} />
 
   return (
@@ -160,7 +178,7 @@ export default function Arcade() {
 
       <footer className="game-footer">
         <span>MADE FOR THE JOY OF PLAY</span>
-        <span>TEN GAMES. ALL YOURS.</span>
+        <span>{games.length} GAMES. ALL YOURS.</span>
       </footer>
     </main>
   )

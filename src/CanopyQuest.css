@@ -1,0 +1,285 @@
+.canopy-page .back-link {
+  margin-left: auto;
+}
+
+.canopy-intro {
+  padding: 35px 0 21px;
+}
+
+.canopy-intro .eyebrow {
+  margin: 0 0 9px;
+}
+
+.canopy-intro h1 {
+  margin: 0;
+  color: #2d4434;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(39px, 5vw, 53px);
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.canopy-intro h1 span {
+  color: #d87956;
+  font-style: italic;
+}
+
+.canopy-intro .intro-copy {
+  max-width: 640px;
+  margin-top: 9px;
+  color: #737c6e;
+  font-size: 12px;
+}
+
+.canopy-shell {
+  overflow: hidden;
+  border: 1px solid #d4d9cc;
+  border-radius: 11px;
+  background: #fffdf5;
+  box-shadow: 0 16px 48px rgba(48, 64, 47, 0.08);
+}
+
+.canopy-toolbar {
+  min-height: 68px;
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) repeat(3, minmax(82px, auto));
+  align-items: center;
+  gap: 23px;
+  padding: 0 20px;
+}
+
+.canopy-stage-label,
+.canopy-stat {
+  display: grid;
+  gap: 3px;
+}
+
+.canopy-stage-label > span,
+.canopy-stat > span {
+  color: #939687;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.canopy-stage-label > strong {
+  color: #364b3a;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.canopy-stat > strong {
+  color: #3e5c42;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.canopy-stat > strong small {
+  margin-left: 3px;
+  color: #959889;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.canopy-stat > strong i {
+  color: #c9c9b9;
+  font-style: normal;
+}
+
+.canopy-stage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 540px;
+  border-block: 1px solid rgba(72, 99, 68, 0.17);
+  background: #afd0ba;
+}
+
+.phaser-mount,
+.phaser-mount canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none;
+}
+
+.canopy-progress {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background: rgba(55, 78, 55, 0.22);
+  pointer-events: none;
+}
+
+.canopy-progress span {
+  width: 0;
+  height: 100%;
+  display: block;
+  background: #d87956;
+  transition: width 160ms linear;
+}
+
+.canopy-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 18px;
+  background: rgba(244, 244, 222, 0.64);
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.canopy-overlay .overlay-kicker {
+  margin: 0 0 8px;
+  color: #668069;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.canopy-overlay h2 {
+  margin: 0;
+  color: #2d4434;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(25px, 4vw, 37px);
+  font-weight: 500;
+}
+
+.canopy-overlay > p:not(.overlay-kicker) {
+  max-width: 480px;
+  margin: 9px 0 16px;
+  color: #546653;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.canopy-overlay .play-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.canopy-controls {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 0 20px;
+}
+
+.canopy-controls > p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: #737b6f;
+  font-size: 10px;
+}
+
+.canopy-controls > p span {
+  color: #b0b2a3;
+}
+
+.canopy-controls kbd {
+  min-width: 22px;
+  padding: 3px 5px;
+  border: 1px solid #dedfce;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: #f6f5ec;
+  color: #53624f;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.canopy-touch-controls {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.canopy-touch-controls button {
+  width: 40px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8ddce;
+  border-radius: 6px;
+  background: #f5f4e9;
+  color: #465e49;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  touch-action: none;
+  user-select: none;
+}
+
+.canopy-touch-controls button:active {
+  background: #dce7d7;
+}
+
+@media (max-width: 640px) {
+  .canopy-intro {
+    padding: 31px 0 18px;
+  }
+
+  .canopy-intro .intro-copy {
+    font-size: 11px;
+  }
+
+  .canopy-toolbar {
+    min-height: 62px;
+    grid-template-columns: minmax(95px, 1fr) repeat(3, minmax(49px, auto));
+    gap: 9px;
+    padding: 0 10px;
+  }
+
+  .canopy-stage-label > span,
+  .canopy-stat > span {
+    font-size: 7px;
+    letter-spacing: 0.35px;
+  }
+
+  .canopy-stage-label > strong {
+    font-size: 12px;
+  }
+
+  .canopy-stat > strong {
+    font-size: 11px;
+  }
+
+  .canopy-stage {
+    min-height: 205px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .canopy-controls {
+    min-height: 54px;
+    padding: 7px 9px;
+  }
+
+  .canopy-controls > p {
+    display: none;
+  }
+
+  .canopy-touch-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .canopy-touch-controls button {
+    width: 45px;
+    height: 40px;
+  }
+}

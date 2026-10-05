@@ -1,6 +1,6 @@
 # Fieldnotes Arcade
 
-A small React arcade that is growing toward a collection of 100 browser games. This release has ten complete, playable games.
+A small React arcade that is growing toward a collection of 100 browser games. This release has eleven playable games, including a four-stage original platformer campaign.
 
 ## Games
 
@@ -14,14 +14,16 @@ A small React arcade that is growing toward a collection of 100 browser games. T
 - **Guess the Number**: Find a hidden number from higher/lower clues in six tries.
 - **Reaction Grove**: Complete five reaction-time rounds and see your average.
 - **Lights Out**: Toggle each tile and its neighbors until the board is dark.
+- **Canopy Quest**: Guide Kai through four original jungle stages with running, jumping, vine swings, seed pods, hazards, lives, and checkpoints.
 
-The collection is being built in batches. The current release is **10 of 100 games**; the other ideas are not playable yet.
+The collection is being built in batches. The current release is **11 of 100 games**; the other ideas are not playable yet.
 
 ## Technologies
 
 - React
 - JavaScript
 - Vite
+- Phaser
 - CSS
 
 ## Run Locally
@@ -47,6 +49,7 @@ Open the local URL printed by Vite. To make a production build, run `npm run bui
 - Guess the Number: submit a number and follow the higher/lower clues.
 - Reaction Grove: tap only after the clearing changes color.
 - Lights Out: selecting a tile toggles it and its orthogonal neighbors.
+- Canopy Quest: `←` / `→` or `A` / `D` to move, `Space` or `↑` to jump, and `E` or `Shift` to grab/release a vine. Touch controls appear on mobile.
 
 ## GitHub Pages
 
@@ -64,6 +67,8 @@ src/
   TicTacToe.jsx    Two-player tic-tac-toe
   ExtraGames.jsx   Seven additional complete games
   ExtraGames.css   Additional game styles
+  CanopyQuest.jsx  Four-stage Phaser platformer campaign
+  CanopyQuest.css  Platformer HUD and responsive controls
   App.jsx          Application entry component
   App.css          Shared arcade styles
   Arcade.css       Game library styles
