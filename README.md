@@ -38,6 +38,8 @@ Open the local URL printed by Vite. To make a production build, run `npm run bui
 
 The Vite base path is configured for the `games` repository. The GitHub Actions workflow builds and deploys the site when changes are pushed to `main`. In the repository settings, set **Pages** to **GitHub Actions** if it is not already selected.
 
+Once the first deployment succeeds, the arcade will be available at <https://gim1203-hue.github.io/games/>.
+
 ## Project Structure
 
 ```text
