@@ -1,0 +1,385 @@
+.mini-game-page .back-link {
+  margin-left: auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 0 8px 10px;
+  border: 0;
+  background: transparent;
+  color: #61755f;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.back-link:hover {
+  color: #d87956;
+}
+
+.back-link span {
+  font-size: 16px;
+}
+
+.mini-intro {
+  padding: 39px 0 23px;
+}
+
+.mini-intro .eyebrow {
+  margin-bottom: 10px;
+}
+
+.mini-intro h1 {
+  margin: 0;
+  color: #2d4434;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(38px, 5vw, 54px);
+  font-weight: 500;
+  line-height: 1.03;
+}
+
+.mini-intro h1 span {
+  color: #d87956;
+  font-style: italic;
+}
+
+.mini-intro .intro-copy {
+  margin-top: 9px;
+}
+
+.mini-game-shell {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid #d4d9cc;
+  border-radius: 12px;
+  background: #fffdf5;
+  box-shadow: 0 16px 48px rgba(48, 64, 47, 0.08);
+}
+
+.mini-game-toolbar {
+  min-height: 67px;
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  padding: 0 20px;
+  border-bottom: 1px solid #e4e5d9;
+}
+
+.mini-stat {
+  min-width: 48px;
+  display: grid;
+  gap: 2px;
+}
+
+.mini-stat span {
+  color: #939687;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.mini-stat strong {
+  color: #364b3a;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.mini-stat strong small {
+  color: #939687;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.text-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 8px 0 8px 10px;
+  border: 0;
+  background: none;
+  color: #58735b;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.text-action:hover {
+  color: #d87956;
+}
+
+.text-action span {
+  font-size: 16px;
+}
+
+.memory-board {
+  width: min(520px, calc(100% - 40px));
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 21px auto 22px;
+}
+
+.memory-card {
+  position: relative;
+  aspect-ratio: 1.18;
+  min-width: 0;
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  border: 1px solid #d9ddcf;
+  border-radius: 7px;
+  background: #eceddf;
+  color: #6a8169;
+  cursor: pointer;
+  transition: background 130ms ease, transform 130ms ease, border-color 130ms ease;
+}
+
+.memory-card:not(:disabled):hover {
+  transform: translateY(-2px);
+  border-color: #91a48c;
+  background: #e3e9d9;
+}
+
+.memory-card-back {
+  font-size: clamp(18px, 3vw, 26px);
+  opacity: 0.8;
+}
+
+.memory-card-face {
+  display: grid;
+  gap: 3px;
+  justify-items: center;
+  color: #49644e;
+}
+
+.memory-card-face b {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(18px, 3vw, 27px);
+  font-weight: 500;
+}
+
+.memory-card-face small {
+  color: #778172;
+  font-size: 8px;
+}
+
+.memory-card.revealed {
+  border-color: #c8aa65;
+  background: #fff4d6;
+}
+
+.memory-card.matched {
+  border-color: #a9c1a1;
+  background: #e0ecdb;
+  cursor: default;
+}
+
+.mini-result {
+  position: absolute;
+  inset: 67px 0 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background: rgba(244, 244, 222, 0.93);
+  text-align: center;
+}
+
+.mini-result h2 {
+  margin: 0;
+  color: #2d4434;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(27px, 4vw, 36px);
+  font-weight: 500;
+}
+
+.mini-result > p:not(.overlay-kicker) {
+  margin: 9px 0 18px;
+  color: #546653;
+  font-size: 12px;
+}
+
+.mini-result > p strong {
+  color: #344b39;
+}
+
+.tictactoe-shell {
+  min-height: 470px;
+}
+
+.score-toolbar {
+  justify-content: center;
+}
+
+.score-toolbar .mini-stat {
+  min-width: 74px;
+}
+
+.score-x,
+.legend-x {
+  color: #d87956 !important;
+}
+
+.score-o,
+.legend-o {
+  color: #557d84 !important;
+}
+
+.tic-status {
+  min-height: 71px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.tic-status strong {
+  color: #3b503e;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tic-status span {
+  color: #818777;
+  font-size: 10px;
+}
+
+.tic-board {
+  width: min(288px, calc(100% - 36px));
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 4px auto 15px;
+}
+
+.tic-cell {
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8dccf;
+  border-radius: 7px;
+  background: #f3f2e8;
+  cursor: pointer;
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.tic-cell:not(:disabled):hover {
+  transform: scale(0.97);
+  background: #e8ecdf;
+}
+
+.tic-cell span {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(38px, 8vw, 60px);
+  line-height: 1;
+}
+
+.tic-cell.mark-x span {
+  color: #d87956;
+}
+
+.tic-cell.mark-o span {
+  color: #557d84;
+}
+
+.tic-cell.winning-cell {
+  border-color: #90ad84;
+  background: #e0ecdb;
+}
+
+.mini-actions {
+  min-height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 19px;
+  border-top: 1px solid #e4e5d9;
+}
+
+.mini-actions p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #778172;
+  font-size: 10px;
+}
+
+.mini-actions .play-button {
+  min-height: 36px;
+  padding-inline: 12px;
+  font-size: 10px;
+}
+
+@media (max-width: 520px) {
+  .mini-intro {
+    padding: 34px 0 20px;
+  }
+
+  .mini-intro .intro-copy {
+    max-width: 300px;
+    font-size: 12px;
+  }
+
+  .mini-game-shell {
+    min-height: 390px;
+  }
+
+  .mini-game-toolbar {
+    min-height: 60px;
+    gap: 13px;
+    padding: 0 12px;
+  }
+
+  .mini-stat {
+    min-width: 39px;
+  }
+
+  .mini-stat span {
+    font-size: 7px;
+    letter-spacing: 0.4px;
+  }
+
+  .mini-stat strong {
+    font-size: 13px;
+  }
+
+  .text-action {
+    gap: 4px;
+    font-size: 10px;
+  }
+
+  .memory-board {
+    gap: 7px;
+    margin: 18px auto;
+  }
+
+  .memory-card-face small {
+    font-size: 7px;
+  }
+
+  .mini-result {
+    inset-block-start: 60px;
+  }
+
+  .tictactoe-shell {
+    min-height: 430px;
+  }
+
+  .score-toolbar .mini-stat {
+    min-width: 62px;
+  }
+
+  .mini-actions {
+    padding: 0 12px;
+  }
+}

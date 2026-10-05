@@ -1,0 +1,341 @@
+.arcade-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 48px 0 31px;
+}
+
+.arcade-intro h1 {
+  margin: 0;
+  color: #2d4434;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(42px, 6vw, 62px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.arcade-intro h1 span {
+  color: #d87956;
+  font-style: italic;
+}
+
+.arcade-intro .intro-copy {
+  margin-top: 13px;
+}
+
+.arcade-count {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-bottom: 4px;
+  color: #768071;
+}
+
+.arcade-count strong {
+  color: #d87956;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 37px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.arcade-count span {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.5;
+}
+
+.arcade-library {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.game-card {
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #d8dccf;
+  border-radius: 9px;
+  background: #fffdf5;
+  color: #304638;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  border-color: #a9bba3;
+  box-shadow: 0 12px 25px rgba(48, 64, 47, 0.1);
+}
+
+.game-card-art {
+  position: relative;
+  height: 176px;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  isolation: isolate;
+}
+
+.game-card-art::before,
+.game-card-art::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  border-radius: 50%;
+}
+
+.game-card-art::before {
+  width: 215px;
+  height: 215px;
+  right: -70px;
+  bottom: -120px;
+  background: rgba(255, 251, 224, 0.2);
+}
+
+.game-card-art::after {
+  width: 114px;
+  height: 114px;
+  left: -40px;
+  top: -48px;
+  border: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+.game-card-art.moss {
+  background: #759777;
+  color: #f5f0d7;
+}
+
+.game-card-art.marigold {
+  background: #d6ae60;
+  color: #fff8df;
+}
+
+.game-card-art.coral {
+  background: #d78669;
+  color: #fff4df;
+}
+
+.card-art-mark {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 47px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.card-art-number {
+  position: absolute;
+  top: 13px;
+  right: 14px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.art-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 138px;
+  height: 138px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.orbit-one {
+  transform: rotate(40deg) scaleY(0.43);
+}
+
+.orbit-two {
+  transform: rotate(-40deg) scaleY(0.43);
+}
+
+.game-card-copy {
+  min-height: 173px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 17px 17px 15px;
+}
+
+.game-card-category {
+  color: #7c8877;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+}
+
+.game-card-title {
+  margin-top: 6px;
+  color: #304638;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 21px;
+  line-height: 1.15;
+}
+
+.game-card-description {
+  margin-top: 8px;
+  color: #727a6d;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.game-card-action {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 14px;
+  color: #547459;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.game-card-action span {
+  color: #d87956;
+  font-size: 14px;
+  line-height: 8px;
+}
+
+.arcade-next {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 19px;
+  padding: 13px 16px;
+  border-block: 1px solid #d9ddd0;
+}
+
+.next-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px dashed #c6ccb9;
+  border-radius: 50%;
+  color: #73836d;
+  font-size: 19px;
+}
+
+.arcade-next > div {
+  display: grid;
+  gap: 3px;
+}
+
+.arcade-next strong {
+  color: #465c49;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.arcade-next > div span {
+  color: #808677;
+  font-size: 10px;
+}
+
+.next-index {
+  margin-left: auto;
+  color: #838a7c;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+@media (max-width: 760px) {
+  .arcade-library {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .game-card-art {
+    height: 148px;
+  }
+}
+
+@media (max-width: 520px) {
+  .arcade-intro {
+    padding: 37px 0 23px;
+  }
+
+  .arcade-intro h1 {
+    font-size: 43px;
+  }
+
+  .arcade-count {
+    gap: 6px;
+  }
+
+  .arcade-count strong {
+    font-size: 27px;
+  }
+
+  .arcade-count span {
+    font-size: 7px;
+  }
+
+  .arcade-library {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .game-card {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+
+  .game-card-art {
+    height: 100%;
+    min-height: 164px;
+  }
+
+  .card-art-mark {
+    font-size: 34px;
+  }
+
+  .card-art-number {
+    top: 8px;
+    right: 8px;
+    font-size: 8px;
+  }
+
+  .game-card-copy {
+    min-height: 164px;
+    padding: 13px 12px 12px;
+  }
+
+  .game-card-title {
+    margin-top: 4px;
+    font-size: 18px;
+  }
+
+  .game-card-description {
+    margin-top: 6px;
+    font-size: 10px;
+  }
+
+  .game-card-action {
+    padding-top: 8px;
+    font-size: 7px;
+  }
+
+  .arcade-next {
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+
+  .arcade-next > div span {
+    max-width: 220px;
+    line-height: 1.4;
+  }
+
+  .next-index {
+    padding-top: 8px;
+    font-size: 8px;
+  }
+}

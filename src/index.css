@@ -1,0 +1,36 @@
+:root {
+  font-family: 'Trebuchet MS', 'Avenir Next', sans-serif;
+  color: #26392f;
+  background: #f3f1e8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  color-scheme: light;
+  font-smooth: never;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid #df8e58;
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #fff9e9;
+  background: #57785f;
+}

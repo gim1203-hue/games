@@ -1,0 +1,62 @@
+# Fieldnotes Arcade
+
+A small React arcade that is growing toward a collection of 100 browser games. The first release has three complete, playable games.
+
+## Games
+
+- **Forest Dash**: Endless woodland runner with jumping, obstacles, berries, pause, replay, and a locally saved high score.
+- **Memory Meadow**: Match six pairs of woodland cards and try to finish in fewer moves.
+- **Acorn & Oak**: Local two-player tic-tac-toe with round and draw scores.
+
+The collection is being built in batches. The current release is **3 of 100 games**; the other ideas are not playable yet.
+
+## Technologies
+
+- React
+- JavaScript
+- Vite
+- CSS
+
+## Run Locally
+
+Requires Node.js 20.19+ or 22.12+.
+
+```sh
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite. To make a production build, run `npm run build`. To run lint checks, run `npm run lint`.
+
+## Controls
+
+- Forest Dash: `Space` or `Arrow Up` to jump; `P` or `Escape` to pause. On touch screens, use the Jump button.
+- Memory Meadow: select two cards to reveal them.
+- Acorn & Oak: two players take turns selecting squares on the same device.
+
+## GitHub Pages
+
+The Vite base path is configured for the `games` repository. The GitHub Actions workflow builds and deploys the site when changes are pushed to `main`. In the repository settings, set **Pages** to **GitHub Actions** if it is not already selected.
+
+## Project Structure
+
+```text
+src/
+  Arcade.jsx       Arcade home and game selection
+  ForestDash.jsx   Canvas endless runner
+  MemoryMatch.jsx  Matching puzzle
+  TicTacToe.jsx    Two-player tic-tac-toe
+  App.jsx          Application entry component
+  App.css          Shared arcade styles
+  Arcade.css       Game library styles
+  MiniGames.css    Mini-game styles
+```
+
+## Future Improvements
+
+- Add more complete games in tested batches toward the 100-game goal.
+- Add optional sound, accessibility settings, and more saved high scores.
+
+## Author
+
+Created as a React learning and portfolio project.
