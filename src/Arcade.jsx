@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ForestDash from './ForestDash.jsx'
 import MemoryMatch from './MemoryMatch.jsx'
 import TicTacToe from './TicTacToe.jsx'
+import ExtraGames from './ExtraGames.jsx'
 import './Arcade.css'
 
 const games = [
@@ -32,6 +33,69 @@ const games = [
     mark: 'A/O',
     tone: 'coral',
   },
+  {
+    id: 'rps',
+    number: '04',
+    title: 'Rock, Paper, Scissors',
+    category: 'BEST OF FIVE',
+    description: 'Challenge the grove to a quick five-round match.',
+    mark: 'RPS',
+    tone: 'moss',
+  },
+  {
+    id: 'word',
+    number: '05',
+    title: 'Forest Word',
+    category: 'WORD GUESS',
+    description: 'Uncover a woodland word before six wrong guesses.',
+    mark: 'FW',
+    tone: 'marigold',
+  },
+  {
+    id: 'whack',
+    number: '06',
+    title: 'Whack-a-Stump',
+    category: 'QUICK REFLEXES',
+    description: 'Tap the forest visitor and avoid empty stumps.',
+    mark: 'WS',
+    tone: 'coral',
+  },
+  {
+    id: 'simon',
+    number: '07',
+    title: 'Simon’s Trail',
+    category: 'SEQUENCE MEMORY',
+    description: 'Watch the glowing trail and repeat its growing pattern.',
+    mark: 'ST',
+    tone: 'moss',
+  },
+  {
+    id: 'guess',
+    number: '08',
+    title: 'Guess the Number',
+    category: 'NUMBER PUZZLE',
+    description: 'Use higher and lower clues to find the hidden number.',
+    mark: '13',
+    tone: 'marigold',
+  },
+  {
+    id: 'reaction',
+    number: '09',
+    title: 'Reaction Grove',
+    category: 'REACTION TEST',
+    description: 'Wait for the signal, then see how fast you can tap.',
+    mark: 'GO',
+    tone: 'coral',
+  },
+  {
+    id: 'lights',
+    number: '10',
+    title: 'Lights Out',
+    category: 'LIGHT PUZZLE',
+    description: 'Toggle a tile and its neighbors until the board goes dark.',
+    mark: 'LO',
+    tone: 'moss',
+  },
 ]
 
 export default function Arcade() {
@@ -40,6 +104,7 @@ export default function Arcade() {
   if (selectedGame === 'forest') return <ForestDash onExit={() => setSelectedGame(null)} />
   if (selectedGame === 'memory') return <MemoryMatch onExit={() => setSelectedGame(null)} />
   if (selectedGame === 'tic-tac-toe') return <TicTacToe onExit={() => setSelectedGame(null)} />
+  if (selectedGame) return <ExtraGames gameId={selectedGame} onExit={() => setSelectedGame(null)} />
 
   return (
     <main className="game-page arcade-page">
@@ -60,7 +125,7 @@ export default function Arcade() {
           <h1>Pick your <span>play.</span></h1>
           <p className="intro-copy">A growing collection of little games for a quick break.</p>
         </div>
-        <div className="arcade-count"><strong>03</strong><span>GAMES<br />READY TO PLAY</span></div>
+        <div className="arcade-count"><strong>{games.length.toString().padStart(2, '0')}</strong><span>GAMES<br />READY TO PLAY</span></div>
       </section>
 
       <section className="arcade-library" aria-label="Playable games">
@@ -90,12 +155,12 @@ export default function Arcade() {
       <section className="arcade-next" aria-label="More games are being made">
         <span className="next-mark" aria-hidden="true">+</span>
         <div><strong>More trails are being made.</strong><span>This collection is growing one fully playable game at a time.</span></div>
-        <span className="next-index">03 / 100</span>
+        <span className="next-index">{games.length.toString().padStart(2, '0')} / 100</span>
       </section>
 
       <footer className="game-footer">
         <span>MADE FOR THE JOY OF PLAY</span>
-        <span>THREE GAMES. ALL YOURS.</span>
+        <span>TEN GAMES. ALL YOURS.</span>
       </footer>
     </main>
   )
