@@ -4,8 +4,10 @@ import MemoryMatch from './MemoryMatch.jsx'
 import TicTacToe from './TicTacToe.jsx'
 import ExtraGames from './ExtraGames.jsx'
 import './Arcade.css'
+import { storyCampaigns } from './storyCampaignData.js'
 
 const CanopyQuest = lazy(() => import('./CanopyQuest.jsx'))
+const StoryCampaign = lazy(() => import('./StoryCampaign.jsx'))
 
 const games = [
   {
@@ -109,6 +111,19 @@ const games = [
   },
 ]
 
+const arcadeGames = [
+  ...games,
+  ...storyCampaigns.map((campaign) => ({
+    id: `story:${campaign.id}`,
+    number: campaign.number,
+    title: campaign.title,
+    category: campaign.category,
+    description: campaign.description,
+    mark: campaign.mark,
+    tone: campaign.tone,
+  })),
+]
+
 export default function Arcade() {
   const [selectedGame, setSelectedGame] = useState(null)
 
@@ -119,6 +134,13 @@ export default function Arcade() {
     return (
       <Suspense fallback={<main className="game-page"><p className="intro-copy">Preparing the canopy trail…</p></main>}>
         <CanopyQuest onExit={() => setSelectedGame(null)} />
+      </Suspense>
+    )
+  }
+  if (selectedGame?.startsWith('story:')) {
+    return (
+      <Suspense fallback={<main className="game-page"><p className="intro-copy">Preparing your campaign…</p></main>}>
+        <StoryCampaign campaignId={selectedGame.slice('story:'.length)} onExit={() => setSelectedGame(null)} />
       </Suspense>
     )
   }
@@ -143,11 +165,11 @@ export default function Arcade() {
           <h1>Pick your <span>play.</span></h1>
           <p className="intro-copy">A growing collection of little games for a quick break.</p>
         </div>
-        <div className="arcade-count"><strong>{games.length.toString().padStart(2, '0')}</strong><span>GAMES<br />READY TO PLAY</span></div>
+        <div className="arcade-count"><strong>{arcadeGames.length.toString().padStart(2, '0')}</strong><span>GAMES<br />READY TO PLAY</span></div>
       </section>
 
       <section className="arcade-library" aria-label="Playable games">
-        {games.map((game) => (
+        {arcadeGames.map((game) => (
           <button
             className="game-card"
             key={game.id}
@@ -173,12 +195,12 @@ export default function Arcade() {
       <section className="arcade-next" aria-label="More games are being made">
         <span className="next-mark" aria-hidden="true">+</span>
         <div><strong>More trails are being made.</strong><span>This collection is growing one fully playable game at a time.</span></div>
-        <span className="next-index">{games.length.toString().padStart(2, '0')} / 100</span>
+        <span className="next-index">{arcadeGames.length.toString().padStart(2, '0')} / 100</span>
       </section>
 
       <footer className="game-footer">
         <span>MADE FOR THE JOY OF PLAY</span>
-        <span>{games.length} GAMES. ALL YOURS.</span>
+        <span>{arcadeGames.length} GAMES. ALL YOURS.</span>
       </footer>
     </main>
   )

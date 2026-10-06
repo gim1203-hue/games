@@ -1,6 +1,6 @@
 # Fieldnotes Arcade
 
-A small React arcade that is growing toward a collection of 100 browser games. This release has eleven playable games, including a four-stage original platformer campaign.
+A small React arcade that is growing toward a collection of 100 browser games. This release has 21 playable games, including a four-stage original platformer and ten original three-chapter campaigns.
 
 ## Games
 
@@ -15,8 +15,18 @@ A small React arcade that is growing toward a collection of 100 browser games. T
 - **Reaction Grove**: Complete five reaction-time rounds and see your average.
 - **Lights Out**: Toggle each tile and its neighbors until the board is dark.
 - **Canopy Quest**: Guide Kai through four original jungle stages with running, jumping, vine swings, seed pods, hazards, lives, and checkpoints.
+- **Galaxy War: The Last Signal**: Shoot through scout and escort waves, then battle the Iron Crown flagship.
+- **Clockwork Courier: The Stopped City**: Platform across Bellwether to restart its master clock.
+- **Deep Signal: The Sunken Archive**: Navigate flooded archive mazes and recover the data pearls.
+- **Ember Escape: The Ashen Pass**: Run the volcanic trail and carry a warning to safety.
+- **Skybound Rescue: The Cloud Isles**: Fly through storm lanes and recover beacon cells.
+- **Sandship Rally: The Glass Dunes**: Dodge desert hazards while delivering a map to a hidden spring.
+- **Moon Garden: The Night Seeds**: Solve three Lights Out puzzles to relight the moon garden.
+- **Crystal Caverns: The Echo Core**: Platform through cave fissures and recover the scattered core.
+- **Stormbreakers: The Signal Tower**: Dodge storm debris and restore the coastal warning beacons.
+- **Wildwood Delivery: The Lantern Route**: Find lantern oil through forest mazes and reunite two villages.
 
-The collection is being built in batches. The current release is **11 of 100 games**; the other ideas are not playable yet.
+The collection is being built in batches. The current release is **21 of 100 games**; the other ideas are not playable yet.
 
 ## Technologies
 
@@ -50,6 +60,7 @@ Open the local URL printed by Vite. To make a production build, run `npm run bui
 - Reaction Grove: tap only after the clearing changes color.
 - Lights Out: selecting a tile toggles it and its orthogonal neighbors.
 - Canopy Quest: `←` / `→` or `A` / `D` to move, `Space` or `↑` to jump, and `E` or `Shift` to grab/release a vine. Touch controls appear on mobile.
+- Story campaigns: each has three chapters with its own objective and ending; use the on-screen controls or keyboard arrows, `Space`, and `WASD` as indicated.
 
 ## GitHub Pages
 
@@ -69,6 +80,9 @@ src/
   ExtraGames.css   Additional game styles
   CanopyQuest.jsx  Four-stage Phaser platformer campaign
   CanopyQuest.css  Platformer HUD and responsive controls
+  storyCampaignData.js  Ten original campaign stories and stage objectives
+  StoryCampaign.jsx     Shared Phaser campaign mechanics
+  StoryCampaign.css     Story campaign HUD and controls
   App.jsx          Application entry component
   App.css          Shared arcade styles
   Arcade.css       Game library styles
